@@ -8,6 +8,17 @@
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
 
-function anagrams(stringA, stringB) {}
+function newString(str) {
+    return str
+        .replace(/[^\w]/g, "") // replace spaces and punctuation elements with ""
+        .toLowerCase()
+        .split("")
+        .sort()
+        .join(""); // ["abcd"]
+}
+
+function anagrams(stringA, stringB) {
+    return newString(stringA) === newString(stringB);
+}
 
 module.exports = anagrams;
